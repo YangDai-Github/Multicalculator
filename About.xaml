@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Multicalculator.About"
+             Title="About">
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to Yang's first .NET MAUI!"
+            FontSize="Medium"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+            Text="Contact me by email dy15800837435@gmail.com"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+            Text="Infos: "
+            FontSize="Small"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start" />
+        <Label 
+            Text="     AM-arithmetic mean;"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start" />
+        <Label 
+            Text="     GM-geometric mean;"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start" />
+        <Label 
+            Text="     GCD-greatest common divisor; "
+            VerticalOptions="Center" 
+            HorizontalOptions="Start" />
+        <Label 
+            Text="     LCM-least common multiple;"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start" />
+    </VerticalStackLayout>
+</ContentPage>

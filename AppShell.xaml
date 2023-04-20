@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Multicalculator.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Multicalculator"
+    xmlns:unlocal="clr-namespace:Multicalculator.Units"
+    Shell.FlyoutBehavior="Flyout">
+
+    <ShellContent
+        Title="Basic"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+        
+    <ShellContent
+        Title="Extra"
+        ContentTemplate="{DataTemplate local:Kgv}"
+        Route="Extra" />
+
+    <FlyoutItem Title="Units">
+        <Tab>
+            <ShellContent
+        Title="Length"
+        ContentTemplate="{DataTemplate unlocal:Length}" />
+            <ShellContent
+        Title="Time"
+        ContentTemplate="{DataTemplate unlocal:Time}" />
+            <ShellContent
+        Title="Area"
+        ContentTemplate="{DataTemplate unlocal:Area}" />
+            <ShellContent
+        Title="Mass"
+        ContentTemplate="{DataTemplate unlocal:Mass}" />
+            <ShellContent
+        Title="Temperature"
+        ContentTemplate="{DataTemplate unlocal:Temperature}" />
+            <ShellContent
+        Title="Speed"
+        ContentTemplate="{DataTemplate unlocal:Speed}" />
+            <ShellContent
+        Title="Volume"
+        ContentTemplate="{DataTemplate unlocal:Volume}" />
+        </Tab>
+    </FlyoutItem>
+
+    <ShellContent
+        Title="About"
+        ContentTemplate="{DataTemplate local:About}"
+        Route="About" />
+
+
+    <Shell.FlyoutFooterTemplate>
+        <DataTemplate>
+            <StackLayout>
+                <Label Text="Multicalculator"
+                TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                FontAttributes="Bold"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            </StackLayout>
+        </DataTemplate>
+    </Shell.FlyoutFooterTemplate>
+
+</Shell>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Multicalculator.Units.Mass"
+             Title="Mass">
+    <ContentPage.Resources>
+
+        <!-- Light colors -->
+        <Color x:Key="LightPrimaryColor">#E1E1E1</Color>
+        <Color x:Key="LightSecondaryColor">#404040</Color>
+
+        <!-- Dark colors -->
+        <Color x:Key="DarkPrimaryColor">#141414</Color>
+        <Color x:Key="DarkSecondaryColor">#ACACAC</Color>
+
+        <Style x:Key="ButtonStyle"
+               TargetType="Button">
+            <Setter Property="BackgroundColor"
+                    Value="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}" />
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" />
+        </Style>
+
+    </ContentPage.Resources>
+
+    <Grid
+        Padding="5,0"
+        ColumnSpacing="5"
+        RowSpacing="5"
+        Margin="5">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+
+        <Label
+            x:Name="result"
+            Grid.Row="0"
+            Grid.ColumnSpan="4"
+            Padding="20"
+            BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
+            FontAttributes="Bold"
+            FontSize="Large"
+            HorizontalTextAlignment="End"
+            LineBreakMode="NoWrap"
+            Text="0"
+            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+            VerticalTextAlignment="Center" />
+
+        <Label
+            x:Name="Nums"
+            Grid.Row="1"
+            Grid.ColumnSpan="4"
+            Padding="20"
+            BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
+            FontAttributes="Bold"
+            FontSize="Large"
+            HorizontalTextAlignment="End"
+            LineBreakMode="NoWrap"
+            Text="0"
+            TextColor="{AppThemeBinding Light=Black, Dark=White}"
+            VerticalTextAlignment="Center" />
+
+        <Picker x:Name="picker1"
+                SelectedIndexChanged="picker1_SelectedIndexChanged"
+        Title="input"
+        TitleColor="{AppThemeBinding Light=Black, Dark=White}"
+        Grid.Row="2"
+        Grid.ColumnSpan="2">
+        </Picker>
+
+        <Picker x:Name="picker2"
+                SelectedIndexChanged="picker2_SelectedIndexChanged"
+        Title="output"
+        TitleColor="{AppThemeBinding Light=Black, Dark=White}"
+        Grid.Row="2"
+        Grid.Column="2">
+        </Picker>
+
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="3"
+            Clicked="OnClear"
+            CornerRadius="3"
+            FontSize="30"
+            FontAutoScalingEnabled="False"
+            Text="AC"
+            BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}"
+            TextColor="#FF900000" />
+
+        <Button
+            Grid.Row="5"
+            Grid.Column="3"
+            Clicked="OnDeleat"
+            CornerRadius="3"
+            FontSize="25"
+            FontAutoScalingEnabled="False"
+            Text="DEL"
+            Style="{StaticResource ButtonStyle}" />
+
+        <Button
+            Grid.Row="3"
+            Grid.Column="3"
+            Clicked="OnInverse"
+            CornerRadius="3"
+            FontSize="25"
+            FontAutoScalingEnabled="False"
+            Text="⇆"
+            Style="{StaticResource ButtonStyle}" />
+
+        <Button
+            Grid.Row="3"
+            Grid.Column="0"
+            Clicked="OnNumberSelection"
+            CornerRadius="3"
+            FontSize="36"
+            Text="7"
+            Style="{StaticResource ButtonStyle}" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="1"
+            Clicked="OnNumberSelection"
+            CornerRadius="3"
+            FontSize="36"
+            Text="8"
+            Style="{StaticResource ButtonStyle}" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="2"
+            Clicked="OnNumberSelection"
+            CornerRadius="3"
+            FontSize="36"
+            Text="9"
+            Style="{StaticResource ButtonStyle}" />
+
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="0"
+            Clicked="OnNumberSelection"
+            CornerRadius="3"
+            FontSize="36"
+            Text="4"
+            Style="{StaticResource ButtonStyle}" />
+        <Button
+            Grid.Row="4"
+            Grid.Column="1"
+            Clicked="OnNumberSelection"
+            CornerRadius="3"
+            FontSize="36"
+            Text="5"
+            Style="{StaticResource ButtonStyle}" />
+        <Button
+            Grid.Row="4"
+            Grid.Column="2"
+            Clicked="OnNumberSelection"
+            CornerRadius="3"
+            FontSize="36"
+            Text="6"
+            Style="{StaticResource ButtonStyle}" />
+
+
+        <Button
+            Grid.Row="5"
+            Grid.Column="0"
+            Clicked="OnNumberSelection"
+            CornerRadius="3"
+            FontSize="36"
+            Text="1"
+            Style="{StaticResource ButtonStyle}" />
+        <Button
+            Grid.Row="5"
+            Grid.Column="1"
+            Clicked="OnNumberSelection"
+            CornerRadius="3"
+            FontSize="36"
+            Text="2"
+            Style="{StaticResource ButtonStyle}" />
+
+        <Button
+            Grid.Row="5"
+            Grid.Column="2"
+            Clicked="OnNumberSelection"
+            CornerRadius="3"
+            FontSize="36"
+            Text="3"
+            Style="{StaticResource ButtonStyle}" />
+        <Button
+            Grid.Row="6"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Clicked="OnNumberSelection"
+            CornerRadius="3"
+            FontSize="36"
+            Text="0"
+            Style="{StaticResource ButtonStyle}" />
+        <Button
+            Grid.Row="6"
+            Grid.Column="2"
+            Clicked="onPointSelection"
+            CornerRadius="3"
+            FontSize="36"
+            Text="."
+            Style="{StaticResource ButtonStyle}" />
+
+
+        <Button
+            Grid.Row="6"
+            Grid.Column="3"
+            BackgroundColor="#FC9E00"
+            Clicked="onSelect"
+            CornerRadius="3"
+            FontSize="40"
+            Text="↵"
+            TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" />
+    </Grid>
+</ContentPage>
